@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Mengalihkan… | ShortHub</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+  body { background: var(--bg); min-height: 100vh; display: grid; place-items: center; padding: 1.5rem; }
+  .redirect-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+  .redirect-icon {
+    width: 64px; height: 64px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: grid; place-items: center;
+    color: white;
+    position: relative;
+  }
+  .redirect-icon::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    opacity: 0.35;
+    animation: ping 1.4s cubic-bezier(0,0,0.2,1) infinite;
+  }
+  @keyframes ping {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+  .redirect-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+  .redirect-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5; }
+  .redirect-target {
+    background: var(--bg-soft);
+    border: 1px dashed var(--border);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    word-break: break-all;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+  .redirect-actions { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+  .redirect-actions .btn { flex: 1; min-width: 120px; }
+  .countdown {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<div class="redirect-card">
+  <div id="cardState">
+    <div class="redirect-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12l5 5L20 7"/>
+      </svg>
+    </div>
+    <h1 class="redirect-title" id="cardTitle">Mengalihkan…</h1>
+    <p class="redirect-sub" id="cardSub">Mohon tunggu, Anda akan diarahkan otomatis dalam <span class="countdown" id="countdown">3</span> detik.</p>
+    <div class="redirect-target" id="cardTarget"></div>
+    <div class="redirect-actions">
+      <button class="btn btn-primary" id="goNowBtn" type="button">Lanjut Sekarang</button>
+      <a class="btn btn-ghost" href="../">Kembali ke Beranda</a>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/store.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var params = new URLSearchParams(window.location.search);
+  var code = (params.get("c") || "").trim();
+  var countdownEl = document.getElementById("countdown");
+  var targetEl = document.getElementById("cardTarget");
+  var titleEl = document.getElementById("cardTitle");
+  var subEl = document.getElementById("cardSub");
+  var goNowBtn = document.getElementById("goNowBtn");
+
+  if (!code) {
+    titleEl.textContent = "Kode tidak ditemukan";
+    subEl.innerHTML = "Tidak ada kode shortlink di URL. Silakan buat shortlink baru di beranda.";
+    targetEl.style.display = "none";
+    countdownEl.parentElement.style.display = "none";
+    goNowBtn.style.display = "none";
+    return;
+  }
+
+  var store = window.ShortHubStore;
+  var link = store.getLink(code);
+
+  if (!link) {
+    titleEl.textContent = "Shortlink tidak ditemukan";
+    subEl.innerHTML = "Shortlink <code>" + escapeHtml(code) + "</code> tidak ada di browser ini. " +
+      "Kemungkinan dibuat di browser/perangkat lain, atau sudah dihapus.";
+    targetEl.style.display = "none";
+    countdownEl.parentElement.style.display = "none";
+    goNowBtn.style.display = "none";
+    return;
+  }
+
+  targetEl.textContent = link.url;
+  var redirectUrl = link.url;
+  var secondsLeft = 3;
+  countdownEl.textContent = secondsLeft;
+
+  function go() {
+    store.incrementClicks(code);
+    window.location.replace(redirectUrl);
+  }
+
+  goNowBtn.addEventListener("click", go);
+
+  var timer = setInterval(function () {
+    secondsLeft -= 1;
+    if (secondsLeft <= 0) {
+      clearInterval(timer);
+      go();
+    } else {
+      countdownEl.textContent = secondsLeft;
+    }
+  }, 1000);
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+})();
+</script>
+</body>
+</html>

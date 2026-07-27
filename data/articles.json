@@ -1,0 +1,95 @@
+{
+  "source": "https://brightdailyhub.my.id",
+  "site_title": "Portal Berita",
+  "site_description": "Portal berita terpercaya menyajikan informasi terkini seputar berita, tutorial, kesehatan, dan teknologi.",
+  "feed_url": "https://brightdailyhub.my.id/feed.php",
+  "last_build_date": "Mon, 27 Jul 2026 08:57:08 +0700",
+  "fetched_at": "2026-07-27T01:57:09.950539Z",
+  "total": 7,
+  "articles": [
+    {
+      "title": "WHO: RI Berhasil Perluas Cakupan Imunisasi Anak dan Tutup Kesenjangan, Apa Artinya bagi Masa Depan Generasi Indonesia?",
+      "link": "https://brightdailyhub.my.id/article/who-ri-berhasil-perluas-cakupan-imunisasi-anak-dan-tutup-kesenjangan-apa-artinya-bagi-masa-depan-generasi-indonesia",
+      "guid": "https://brightdailyhub.my.id/article/who-ri-berhasil-perluas-cakupan-imunisasi-anak-dan-tutup-kesenjangan-apa-artinya-bagi-masa-depan-generasi-indonesia",
+      "description": "Keberhasilan Indonesia dalam memperluas cakupan imunisasi anak menjadi salah satu kabar baik bagi sektor kesehatan nasional. Setelah beberapa tahun menghadapi tantangan akibat pandemi COVID-19 yang mengganggu layanan kesehatan dasar, berbagai upaya pemulihan akhirnya mulai menun…",
+      "description_raw": "Keberhasilan Indonesia dalam memperluas cakupan imunisasi anak menjadi salah satu kabar baik bagi sektor kesehatan nasional. Setelah beberapa tahun menghadapi tantangan akibat pandemi COVID-19 yang mengganggu layanan kesehatan dasar, berbagai upaya pemulihan akhirnya mulai menunjukkan hasil yang positif. Organisasi Kesehatan Dunia (WHO) menilai Indonesia berhasil meningkatkan jangkauan imunisasi sekaligus mengurangi...",
+      "author": "Admin",
+      "category": "Kesehatan",
+      "pubDate": "Wed, 22 Jul 2026 01:38:05 +0700",
+      "pubDateISO": "2026-07-22T01:38:05+07:00",
+      "image": ""
+    },
+    {
+      "title": "10 Teknologi yang Akan Mendominasi Tahun 2026",
+      "link": "https://brightdailyhub.my.id/article/teknologi-2026",
+      "guid": "https://brightdailyhub.my.id/article/teknologi-2026",
+      "description": "Tahun 2026 menjadi saksi perkembangan teknologi yang pesat. Berikut adalah 10 teknologi yang diprediksi akan mendominasi: 1. Artificial Intelligence Generasi Baru AI tidak lagi sekadar chatbot. Model bahasa besar (LLM) generasi terbaru mampu memahami konteks dengan lebih baik da…",
+      "description_raw": "Tahun 2026 menjadi saksi perkembangan teknologi yang pesat. Berikut adalah 10 teknologi yang diprediksi akan mendominasi: 1. Artificial Intelligence Generasi Baru AI tidak lagi sekadar chatbot. Model bahasa besar (LLM) generasi terbaru mampu memahami konteks dengan lebih baik dan menghasilkan output yang lebih akurat. 2. Komputasi Kuantum Komputer kuantum mulai...",
+      "author": "Admin",
+      "category": "Teknologi",
+      "pubDate": "Mon, 20 Jul 2026 22:22:32 +0700",
+      "pubDateISO": "2026-07-20T22:22:32+07:00",
+      "image": ""
+    },
+    {
+      "title": "Tips Menjaga Kesehatan Jantung di Usia Muda",
+      "link": "https://brightdailyhub.my.id/article/tips-kesehatan-jantung",
+      "guid": "https://brightdailyhub.my.id/article/tips-kesehatan-jantung",
+      "description": "Penyakit jantung tidak lagi hanya menyerang lansia. Gaya hidup modern membuat usia produktif juga rentan terkena penyakit kardiovaskular. 1. Rutin Berolahraga Lakukan aktivitas fisik minimal 30 menit setiap hari. Jalan kaki, bersepeda, atau berenang adalah pilihan yang baik. 2.…",
+      "description_raw": "Penyakit jantung tidak lagi hanya menyerang lansia. Gaya hidup modern membuat usia produktif juga rentan terkena penyakit kardiovaskular. 1. Rutin Berolahraga Lakukan aktivitas fisik minimal 30 menit setiap hari. Jalan kaki, bersepeda, atau berenang adalah pilihan yang baik. 2. Kelola Stres Stres kronis dapat meningkatkan tekanan darah. Cobalah meditasi, yoga,...",
+      "author": "Dr. Andi",
+      "category": "Kesehatan",
+      "pubDate": "Sun, 19 Jul 2026 22:22:32 +0700",
+      "pubDateISO": "2026-07-19T22:22:32+07:00",
+      "image": ""
+    },
+    {
+      "title": "Tutorial Lengkap Belajar PHP untuk Pemula",
+      "link": "https://brightdailyhub.my.id/article/tutorial-php-pemula",
+      "guid": "https://brightdailyhub.my.id/article/tutorial-php-pemula",
+      "description": "PHP adalah bahasa pemrograman yang banyak digunakan untuk pengembangan web. Tutorial ini cocok untuk pemula. Apa itu PHP? PHP (Hypertext Preprocessor) adalah bahasa pemrograman server-side yang dirancang khusus untuk pengembangan web. Mengapa Belajar PHP? Mudah dipelajari untuk…",
+      "description_raw": "PHP adalah bahasa pemrograman yang banyak digunakan untuk pengembangan web. Tutorial ini cocok untuk pemula. Apa itu PHP? PHP (Hypertext Preprocessor) adalah bahasa pemrograman server-side yang dirancang khusus untuk pengembangan web. Mengapa Belajar PHP? Mudah dipelajari untuk pemula Banyak digunakan (80% website) Komunitas besar Banyak framework tersedia Instalasi PHP Untuk...",
+      "author": "Admin",
+      "category": "Tutorial",
+      "pubDate": "Sat, 18 Jul 2026 22:22:32 +0700",
+      "pubDateISO": "2026-07-18T22:22:32+07:00",
+      "image": ""
+    },
+    {
+      "title": "Tren Ekonomi Digital di Indonesia 2026",
+      "link": "https://brightdailyhub.my.id/article/ekonomi-digital-2026",
+      "guid": "https://brightdailyhub.my.id/article/ekonomi-digital-2026",
+      "description": "Indonesia menjadi salah satu negara dengan pertumbuhan ekonomi digital tercepat di Asia Tenggara. E-Commerce Semakin Dominan Platform e-commerce terus berinovasi dengan fitur live shopping dan social commerce. Pembayaran Digital Dompet digital dan QRIS menjadi metode pembayaran…",
+      "description_raw": "Indonesia menjadi salah satu negara dengan pertumbuhan ekonomi digital tercepat di Asia Tenggara. E-Commerce Semakin Dominan Platform e-commerce terus berinovasi dengan fitur live shopping dan social commerce. Pembayaran Digital Dompet digital dan QRIS menjadi metode pembayaran utama masyarakat Indonesia. Ekonomi Kreatif Konten kreator dan UMKM digital ikut mendorong pertumbuhan ekonomi....",
+      "author": "Admin",
+      "category": "Ekonomi",
+      "pubDate": "Fri, 17 Jul 2026 22:22:32 +0700",
+      "pubDateISO": "2026-07-17T22:22:32+07:00",
+      "image": ""
+    },
+    {
+      "title": "5 Aplikasi Produktivitas Terbaik 2026",
+      "link": "https://brightdailyhub.my.id/article/aplikasi-produktivitas-2026",
+      "guid": "https://brightdailyhub.my.id/article/aplikasi-produktivitas-2026",
+      "description": "Di era digital, aplikasi produktivitas membantu kita bekerja lebih efisien. Berikut rekomendasi terbaik: 1. Notion All-in-one workspace untuk catatan, tugas, dan database. 2. Todoist Aplikasi to-do list yang sederhana namun powerful. 3. Trello Manajemen proyek berbasis kanban bo…",
+      "description_raw": "Di era digital, aplikasi produktivitas membantu kita bekerja lebih efisien. Berikut rekomendasi terbaik: 1. Notion All-in-one workspace untuk catatan, tugas, dan database. 2. Todoist Aplikasi to-do list yang sederhana namun powerful. 3. Trello Manajemen proyek berbasis kanban board. 4. Obsidian Note-taking dengan sistem linked notes. 5. Forest Aplikasi fokus dengan...",
+      "author": "Admin",
+      "category": "Teknologi",
+      "pubDate": "Thu, 16 Jul 2026 22:22:32 +0700",
+      "pubDateISO": "2026-07-16T22:22:32+07:00",
+      "image": ""
+    },
+    {
+      "title": "Manfaat Meditasi untuk Kesehatan Mental",
+      "link": "https://brightdailyhub.my.id/article/manfaat-meditasi",
+      "guid": "https://brightdailyhub.my.id/article/manfaat-meditasi",
+      "description": "Meditasi telah dipraktikkan selama ribuan tahun dan kini didukung oleh riset ilmiah modern. Mengurangi Stres Meditasi menurunkan kadar kortisol, hormon stres, dalam tubuh. Meningkatkan Fokus Praktik meditasi rutin memperkuat kemampuan konsentrasi. Memperbaiki Kualitas Tidur Medi…",
+      "description_raw": "Meditasi telah dipraktikkan selama ribuan tahun dan kini didukung oleh riset ilmiah modern. Mengurangi Stres Meditasi menurunkan kadar kortisol, hormon stres, dalam tubuh. Meningkatkan Fokus Praktik meditasi rutin memperkuat kemampuan konsentrasi. Memperbaiki Kualitas Tidur Meditasi sebelum tidur membantu menenangkan pikiran. Meningkatkan Kesejahteraan Emosional Meditasi membantu mengelola emosi dan meningkatkan rasa...",
+      "author": "Dr. Sari",
+      "category": "Kesehatan",
+      "pubDate": "Wed, 15 Jul 2026 22:22:32 +0700",
+      "pubDateISO": "2026-07-15T22:22:32+07:00",
+      "image": ""
+    }
+  ]
+}

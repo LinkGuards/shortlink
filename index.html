@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shortlink generator gratis dengan fitur random artikel dari Brightdailyhub. Deploy di GitHub Pages, tanpa backend.">
+<meta name="theme-color" content="#dc2626">
+<title>ShortHub — Shortlink & Random Artikel</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="bg-gradient" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="./" class="brand" aria-label="ShortHub home">
+      <span class="brand-icon">🔗</span>
+      <span class="brand-text">Short<span class="brand-accent">Hub</span></span>
+    </a>
+    <nav class="top-nav" aria-label="Navigasi utama">
+      <a href="#shortener" class="nav-link">Shortlink</a>
+      <a href="#my-links" class="nav-link">Tautan Saya</a>
+      <a href="#articles" class="nav-link">Artikel</a>
+      <a href="#about" class="nav-link">Tentang</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ganti tema" title="Ganti tema terang/gelap">
+      <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO + SHORTLINK CREATOR -->
+  <section id="shortener" class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        Powered by Brightdailyhub.my.id · 100% Static · GitHub Pages Ready
+      </div>
+      <h1 class="hero-title">
+        Pendekkan URL,<br>
+        <span class="grad-text">temukan artikel acak.</span>
+      </h1>
+      <p class="hero-sub">
+        Shortlink gratis tanpa backend. Semua data tersimpan di browser Anda (localStorage).
+        Bisa di-deploy penuh di GitHub Pages. Plus: jelajahi artikel pilihan dari
+        <a href="https://brightdailyhub.my.id" target="_blank" rel="noopener">brightdailyhub.my.id</a>.
+      </p>
+
+      <form id="shortenForm" class="shorten-card" autocomplete="off">
+        <div class="input-row">
+          <input
+            type="url"
+            id="urlInput"
+            name="url"
+            placeholder="Tempel URL panjang di sini… (https://…)"
+            required
+            aria-label="URL panjang"
+          >
+          <button type="submit" class="btn btn-primary" id="shortenBtn">
+            <span class="btn-label">Pendekkan</span>
+          </button>
+        </div>
+        <div class="options-row">
+          <label class="opt-field">
+            <span class="opt-label">Custom code (opsional)</span>
+            <input type="text" id="customCode" placeholder="misal: promo-lebaran" pattern="[a-zA-Z0-9_-]{0,32}" maxlength="32">
+          </label>
+          <label class="opt-field opt-check">
+            <input type="checkbox" id="rememberMe" checked>
+            <span>Simpan di browser ini</span>
+          </label>
+        </div>
+        <div id="resultBox" class="result-box hidden" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" id="statTotalLinks">0</span>
+          <span class="stat-label">Shortlink dibuat</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statTotalArticles">0</span>
+          <span class="stat-label">Artikel tersedia</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statTotalClicks">0</span>
+          <span class="stat-label">Total klik</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY LINKS -->
+  <section id="my-links" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Tautan Saya</h2>
+          <p class="section-desc">Daftar shortlink yang Anda buat di browser ini. Klik untuk menyalin, atau kelola dengan tombol hapus.</p>
+        </div>
+        <div class="section-actions">
+          <input type="search" id="searchLinks" placeholder="Cari URL atau code…" class="search-input" aria-label="Cari shortlink">
+          <button class="btn btn-ghost" id="exportBtn" type="button">Export JSON</button>
+          <button class="btn btn-ghost-danger" id="clearAllBtn" type="button">Hapus Semua</button>
+        </div>
+      </div>
+      <div id="linksList" class="links-list"></div>
+      <div id="emptyState" class="empty-state hidden">
+        <div class="empty-icon">📭</div>
+        <p>Belum ada shortlink. Buat yang pertama di atas!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANDOM ARTICLES -->
+  <section id="articles" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Artikel Acak dari Brightdailyhub</h2>
+          <p class="section-desc">
+            Sumber: <a href="https://brightdailyhub.my.id" target="_blank" rel="noopener">brightdailyhub.my.id</a>.
+            Diperbarui otomatis tiap hari via GitHub Actions.
+          </p>
+        </div>
+        <div class="section-actions">
+          <button class="btn btn-primary" id="randomArticleBtn" type="button">
+            <span>🎲</span> Tampilkan Artikel Acak
+          </button>
+          <button class="btn btn-ghost" id="refreshArticlesBtn" type="button">Muat Ulang</button>
+        </div>
+      </div>
+
+      <article id="randomArticleCard" class="article-card article-card-featured hidden" aria-live="polite"></article>
+
+      <div class="articles-head">
+        <h3 class="subsection-title">Semua Artikel (<span id="articleCount">0</span>)</h3>
+        <div class="filter-chips" id="categoryFilter" role="tablist" aria-label="Filter kategori"></div>
+      </div>
+      <div id="articlesGrid" class="articles-grid"></div>
+      <div id="articlesEmpty" class="empty-state hidden">
+        <div class="empty-icon">📰</div>
+        <p>Belum ada artikel. Coba muat ulang.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">Tentang Project</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">⚡</div>
+          <h3>100% Static</h3>
+          <p>Tanpa backend, tanpa database. Semua shortlink disimpan di <code>localStorage</code> browser Anda. Deploy di GitHub Pages, Netlify, atau Cloudflare Pages — gratis selamanya.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🎯</div>
+          <h3>URL Bersih</h3>
+          <p>Menggunakan trik <code>404.html</code> sehingga shortlink berbentuk <code>/s/kode-anda</code> — bukan query string panjang. Tinggal copy, bagikan, selesai.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🔄</div>
+          <h3>Auto Update Artikel</h3>
+          <p>GitHub Actions cron job mengambil RSS feed <code>brightdailyhub.my.id/feed.php</code> setiap hari dan menyimpannya sebagai JSON di repo. Tidak perlu CORS proxy.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🔒</div>
+          <h3>Privasi by Design</h3>
+          <p>Shortlink tidak dikirim ke server mana pun. Tidak ada tracking, tidak ada analitik pihak ketiga. Yang Anda buat hanya milik Anda di browser itu.</p>
+        </div>
+      </div>
+
+      <div class="deploy-cta">
+        <h3>Siap Deploy?</h3>
+        <ol class="deploy-steps">
+          <li>Fork / upload folder ini ke repository GitHub baru.</li>
+          <li>Buka <strong>Settings → Pages → Source: Deploy from a branch → <code>main</code> / <code>/</code></strong>.</li>
+          <li>Tunggu 1–2 menit. Site live di <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/</code>.</li>
+          <li>Aktifkan GitHub Actions dengan izin <strong>Read and write</strong> agar artikel auto-update berjalan.</li>
+        </ol>
+        <p class="deploy-note">Lihat <code>README.md</code> untuk panduan lengkap dan kustomisasi.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-icon">🔗</span> ShortHub · Made with ❤️ for static web
+    </div>
+    <div class="footer-meta">
+      <span>Source: <a href="https://brightdailyhub.my.id" target="_blank" rel="noopener">brightdailyhub.my.id</a></span>
+      <span>·</span>
+      <span id="footerYear"></span>
+      <span>·</span>
+      <span>v1.0.0</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+
+<script src="assets/js/store.js"></script>
+<script src="assets/js/articles.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
