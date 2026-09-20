@@ -1,12 +1,24 @@
 {
   "source": "https://brightdailyhub.my.id",
-  "site_title": "Portal Berita",
+  "site_title": "Bright Daily Hub",
   "site_description": "Portal berita terpercaya menyajikan informasi terkini seputar berita, tutorial, kesehatan, dan teknologi.",
   "feed_url": "https://brightdailyhub.my.id/feed.php",
-  "last_build_date": "Sat, 19 Sep 2026 18:52:40 +0700",
-  "fetched_at": "2026-09-19T11:52:41.903998+00:00",
-  "total": 7,
+  "last_build_date": "Sun, 20 Sep 2026 19:11:33 +0700",
+  "fetched_at": "2026-09-20T12:11:34.250274+00:00",
+  "total": 8,
   "articles": [
+    {
+      "title": "Membuka Era Baru dengan AI Model Terbaru: Panduan Lengkap untuk Pemula hingga Menengah",
+      "link": "https://brightdailyhub.my.id/article/ai-model-terbaru-teknologi-cerdas-masa-depan",
+      "guid": "https://brightdailyhub.my.id/article/ai-model-terbaru-teknologi-cerdas-masa-depan",
+      "description": "AI Model Terbaru: Teknologi Cerdas Masa Depan AI Model Terbaru: Teknologi Cerdas Masa DepanTemukan cara memahami dan mengoptimalkan AI model terbaru untuk meningkatkan efisiensi dan produktivitas dalam berbagai sektor dengan panduan lengkap ini. Pengenalan AI Model Terbaru: Apa…",
+      "description_raw": "AI Model Terbaru: Teknologi Cerdas Masa Depan AI Model Terbaru: Teknologi Cerdas Masa DepanTemukan cara memahami dan mengoptimalkan AI model terbaru untuk meningkatkan efisiensi dan produktivitas dalam berbagai sektor dengan panduan lengkap ini. Pengenalan AI Model Terbaru: Apa itu dan Bagaimana Bekerja AI model terbaru merupakan teknologi canggih yang...",
+      "author": "Admin",
+      "category": "Teknologi",
+      "pubDate": "Sat, 19 Sep 2026 21:24:00 +0700",
+      "pubDateISO": "2026-09-19T21:24:00+07:00",
+      "image": ""
+    },
     {
       "title": "WHO: RI Berhasil Perluas Cakupan Imunisasi Anak dan Tutup Kesenjangan, Apa Artinya bagi Masa Depan Generasi Indonesia?",
       "link": "https://brightdailyhub.my.id/article/who-ri-berhasil-perluas-cakupan-imunisasi-anak-dan-tutup-kesenjangan-apa-artinya-bagi-masa-depan-generasi-indonesia",
